@@ -1,7 +1,7 @@
 package 일차원_배열;
 
 import java.io.*;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class ex10871 {
 	public static void main(String[] args) throws IOException {
