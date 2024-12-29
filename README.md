@@ -2,6 +2,7 @@
 
 코딩 실력을 키우고, 알고리즘을 연마하며, 프로그래밍 기술을 향상시키기 위해 코딩 문제풀이 내용을 작성하는 저장소.
 
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=kwondw30)](https://solved.ac/kwondw30/)
 
 
 ## 📋 문제 목록
