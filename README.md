@@ -3,8 +3,6 @@
 
 
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=kwondw30)](https://solved.ac/kwondw30/)
-
-asdf
 ## 📋 문제 목록
 
 | **문제 번호** | **문제 제목**                     | **유형**                             | **확인**    | **링크**                             |
