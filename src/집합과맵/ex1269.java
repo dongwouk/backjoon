@@ -1,27 +1,35 @@
 package 집합과맵;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
-import java.util.StringTokenizer;
+import java.util.Scanner;
+import java.util.Set;
 
 public class ex1269 {
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
 
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		int n = Integer.parseInt(st.nextToken());
-		int m = Integer.parseInt(st.nextToken());
+		int n = scanner.nextInt();
+		int m = scanner.nextInt();
 
-		ArrayList<String> arr = new ArrayList<String>();
+		Set<Integer> setA = new HashSet<>();
+		Set<Integer> setB = new HashSet<>();
+
 		for (int i = 0; i < n; i++) {
-			arr.add(e)
+			setA.add(scanner.nextInt());
 		}
-		System.out.println(list.toString());
 
+		for (int i = 0; i < m; i++) {
+			setB.add(scanner.nextInt());
+		}
 
+		Set<Integer> symmetricDiff = new HashSet<>(setA);
+		symmetricDiff.addAll(setB);
+		Set<Integer> intersection = new HashSet<>(setA);
+		intersection.retainAll(setB);
+		symmetricDiff.removeAll(intersection);
+
+		System.out.println(symmetricDiff.size());
+
+		scanner.close();
 	}
 }
