@@ -1,41 +1,37 @@
 package 스택큐덱;
 
-import java.io.*;
 import java.util.*;
 
 public class ex2346 {
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
-		StringTokenizer st;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		List<int[]> balloons = new ArrayList<>();
 
-		int N = Integer.parseInt(br.readLine());
-		Deque<int[]> deque = new LinkedList<>();
-
-		st = new StringTokenizer(br.readLine());
-		for (int i = 1; i <= N; i++) {
-			deque.add(new int[] { i, Integer.parseInt(st.nextToken()) });
+		for (int i = 0; i < n; i++) {
+			balloons.add(new int[] { i + 1, sc.nextInt() }); // 풍선 번호와 이동값 저장
 		}
 
-		while (!deque.isEmpty()) {
-			int[] balloon = deque.pollFirst();
-			sb.append(balloon[0]).append(" ");
+		StringBuilder result = new StringBuilder();
+		int index = 0; // 현재 터뜨릴 풍선의 인덱스
 
-			int move = balloon[1];
-			if (deque.isEmpty())
+		while (!balloons.isEmpty()) {
+			int[] current = balloons.remove(index);
+			result.append(current[0]).append(" ");
+
+			if (balloons.isEmpty())
 				break;
 
+			int move = current[1];
 			if (move > 0) {
-				for (int i = 0; i < move - 1; i++) {
-					deque.addLast(deque.pollFirst());
-				}
+				index = (index + (move - 1)) % balloons.size();
 			} else {
-				for (int i = 0; i < Math.abs(move); i++) {
-					deque.addFirst(deque.pollLast());
-				}
+				index = (index + move) % balloons.size();
+				if (index < 0)
+					index += balloons.size();
 			}
 		}
 
-		System.out.println(sb.toString().trim());
+		System.out.println(result.toString().trim());
 	}
 }
