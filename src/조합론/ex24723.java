@@ -9,5 +9,4 @@ public class ex24723 {
 		int result = (int) Math.pow(2, t); // 2^t 계산
 		System.out.println(result);
 	}
-
 }
